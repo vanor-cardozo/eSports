@@ -67,8 +67,8 @@ function App() {
                       />
                     </div>
 
-                    <div>
-                      <label htmlFor="name">Seu nome (ou nickname)</label>
+                    <div className="flex flex-col gap-2">
+                      <label htmlFor="name" className="font-semibold">Seu nome (ou nickname)</label>
                       <Input 
                         id="name" 
                         placeholder="como te chamam dentro do game?"
@@ -77,18 +77,18 @@ function App() {
 
                     <div className="grid grid-cols-2 gap-6">
                       <div className="flex flex-col gap-2">
-                        <label htmlFor="yearsPlayng">Joga há quantos anos?</label>
+                        <label htmlFor="yearsPlayng" className="font-semibold">Joga há quantos anos?</label>
                         <Input type="number" id="yearsPlayng" placeholder="Tudo bem ser Zero"/>
                       </div>
                       <div className="flex flex-col gap-2">
-                        <label htmlFor="discord">Qual seu Discord?</label>
+                        <label htmlFor="discord" className="font-semibold">Qual seu Discord?</label>
                         <Input id="discord" placeholder="Usuário#0000"/>
                       </div>
                     </div>
 
                     <div className="flex gap-6">
                       <div className="flex flex-col gap-2">
-                        <label htmlFor="weekDays">Quando costuma jogar?</label>
+                        <label htmlFor="weekDays" className="font-semibold">Quando costuma jogar?</label>
 
                           <div className="grid grid-cols-4 gap-2">
                             <button className="w-8 h-8 rounded bg-zinc-900" title="Domingo">D</button>
@@ -101,7 +101,7 @@ function App() {
                           </div>
                       </div>
                       <div className="flex flex-col gap-2 flex-1">
-                        <label htmlFor="hourStart">Qual horário do dia?</label>
+                        <label htmlFor="hourStart" className="font-semibold">Qual horário do dia?</label>
                         <div className="grid grid-cols-2 gap-2">
                           <Input type="time" id="hourStart" placeholder="De"/>
                           <Input type="time" id="hourEnd" placeholder="Até"/>
