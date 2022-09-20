@@ -4,7 +4,7 @@
 </h1>
 
 <h4 align="center"> 
-	🚧 eSports em  construção 🚧
+	<< eSports - navegue pelos links >>
 </h4>
 
 <p align="center">
