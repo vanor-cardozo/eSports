@@ -1,4 +1,5 @@
 import { FormEvent, useEffect, useState } from 'react';
+import axios from 'axios';
 
 import * as Dialog from '@radix-ui/react-dialog';
 import * as Checkbox from '@radix-ui/react-checkbox';
@@ -21,19 +22,36 @@ export function CreateAdModal(){
     const [gameSelected, setGameSelected] = useState<string>('');
 
     useEffect(() => {
-        fetch('http://localhost:3333/games')
-          .then(response => response.json())
-          .then(data => {
-            setGames(data);
-          })
+        axios('http://localhost:3333/games').then(response => {
+            setGames(response.data);
+        })
       }, []);
 
-      function handleCreateAd(event: FormEvent) {
+      async function handleCreateAd(event: FormEvent) {
         event.preventDefault();
 
         const formData = new FormData(event.target as HTMLFormElement)
         const data = Object.fromEntries(formData)
+
+        try{
+          await axios.post(`http://localhost:3333/games/${gameSelected}/ads`, {
+            name: data.name,
+            yearsPlaying: Number(data.yearsPlaying),
+            discord: data.discord,
+            weekDays: weekDays.map(Number),
+            hourStart: data.hourStart,
+            hourEnd: data.hourEnd,
+            useVoiceChannel: useVoiceChannel
+          })
+
+          alert('Anúncio criado com sucesso!')
+        } catch(err) {
+          console.log(err)
+          alert('Erro ao criar o anúncio!')
+        }
       }
+
+
 
     return(
         <Dialog.Portal>
@@ -55,13 +73,14 @@ export function CreateAdModal(){
 
                             <Select.Portal className="bg-zinc-900 rounded-sm text-white w-3/4 p-2 flex place-items-center">
                                 <Select.Content >
-                                        <Select.Viewport>
-                                            {games.map((item) =>(
-                                                <Select.Item key={item.id} value={item.id} className="hover:bg-violet-600 p-2 ">
-                                                    <Select.ItemText >{item.title}</Select.ItemText>
-                                                </Select.Item>
-                                            ))}
-                                        </Select.Viewport>
+                                    <Select.Viewport>
+                                        {games.map((item) =>(
+                                            <Select.Item key={item.id} value={item.id} className="hover:bg-violet-600 p-2 ">
+                                                <Select.ItemText >{item.title}</Select.ItemText>
+                                            </Select.Item>
+                                        ))}
+                                    </Select.Viewport>
+
                                 </Select.Content>
                             </Select.Portal>
                         </Select.Root>
@@ -78,8 +97,8 @@ export function CreateAdModal(){
 
                     <div className="grid grid-cols-2 gap-6">
                       <div className="flex flex-col gap-2">
-                        <label htmlFor="yearsPlayng" className="font-semibold">Joga há quantos anos?</label>
-                        <Input type="number" id="yearsPlayng" name="yearsPlayng" placeholder="Tudo bem ser Zero"/>
+                        <label htmlFor="yearsPlaying" className="font-semibold">Joga há quantos anos?</label>
+                        <Input type="number" id="yearsPlaying" name="yearsPlaying" placeholder="Tudo bem ser Zero"/>
                       </div>
                       <div className="flex flex-col gap-2">
                         <label htmlFor="discord" className="font-semibold">Qual seu Discord?</label>

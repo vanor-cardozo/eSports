@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import './styles/main.css';
 import logoImg from './assets/logo-nlw-esports.svg'
@@ -26,10 +27,8 @@ function App() {
 
   
   useEffect(() => {
-    fetch('http://localhost:3333/games')
-      .then(response => response.json())
-      .then(data => {
-        setGames(data);
+    axios('http://localhost:3333/games').then(response => {
+        setGames(response.data);
       })
   }, []);
 
