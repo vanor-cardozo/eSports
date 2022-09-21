@@ -16,7 +16,7 @@
 
 ## 💻 Sobre o projeto
 
-App eSports - é uma forma de conectar jogadores. Você poderá visualizar usuários disponíveis por tipo de jogo e se conectar através do nickname do Discord, também é possível se cadastrar na plataforma e aguardar uma conexão.
+App eSports - é uma forma de conectar jogadores. Você poderá visualizar usuários disponíveis por tipo de jogo e se conectar com players através do nickname do Discord, também é possível se cadastrar na plataforma e aguardar uma conexão.
 
 Projeto desenvolvido durante a **NLW - Next Level Week** oferecida pela Rocketseat.
 O NLW é uma experiência online com muito conteúdo prático, desafios e hacks onde o conteúdo fica disponível durante uma semana.
