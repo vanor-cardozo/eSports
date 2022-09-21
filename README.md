@@ -148,4 +148,8 @@ $ expo start
     - Phosphor
     - SQLite
     - Cors
+---
 
+<h1 align="center">
+    <img alt="Rodapé com imagem e nome do autor Vanor Cardozo" title="eSports" src="footer_vanor_eSports.png"/>
+</h1>
