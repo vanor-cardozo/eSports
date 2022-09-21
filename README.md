@@ -11,10 +11,7 @@
  <a href="#-funcionalidades">Funcionalidades</a> •
  <a href="#-design">Design</a> •
  <a href="#-como-executar-o-projeto">Como executar</a> • 
- <a href="#-tecnologias">Tecnologias</a> •
- <a href="#-proximos-passos">Próximos passos</a> •
- <a href="#-autor">Autor</a> •
- <a href="#user-content--licença">Licença</a>
+ <a href="#-tecnologias">Tecnologias</a> 
 </p>
 
 
@@ -84,7 +81,7 @@ $ npm install
 # Execute a aplicação em modo de desenvolvimento
 $ npm run dev
 
-# O servidor inciará na porta:3333 - acesse http://localhost:3333 
+# O servidor iniciará na porta:3333 - acesse http://localhost:3333 
 
 ```
 
