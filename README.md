@@ -142,8 +142,6 @@ $ expo start
  - [x] Mobile (React Native + TypeScript)
     - Expo
     - Phosphor
-    - SQLite
-    - Cors
 ---
 
 <h1 align="center">
